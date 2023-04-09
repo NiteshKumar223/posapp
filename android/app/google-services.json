@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "688896552223",
+    "project_id": "posapp-ee351",
+    "storage_bucket": "posapp-ee351.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688896552223:android:2e8bb58f6ea4fdd4f0542a",
+        "android_client_info": {
+          "package_name": "pos_app1.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688896552223-p6l1i0i9krcn0r1s6t5ma2mgu4q270js.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pos_app1.app",
+            "certificate_hash": "759589d86c89275307957fb028edfa99c4c04a8a"
+          }
+        },
+        {
+          "client_id": "688896552223-83nlpb07jv90d2gp2eic2ddg75qm0jr9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMtSTr04fu7YnsDc7o_bVamzp4nvKSX0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688896552223-83nlpb07jv90d2gp2eic2ddg75qm0jr9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pos_app/custom_ui/custom_scan_dialog.dart';
 import 'package:pos_app/pages/page_login.dart';
 import 'package:pos_app/pages/page_my_home.dart';
+import 'package:pos_app/pages/page_profile.dart';
 import 'package:pos_app/utils/colors.dart';
 import 'package:flutter_boxicons/flutter_boxicons.dart';
 import '../custom_ui/custom_drawer_item.dart';
@@ -14,6 +16,13 @@ class PageDrawer extends StatefulWidget {
 }
 
 class _PageDrawerState extends State<PageDrawer> {
+
+  FirebaseAuth _auth = FirebaseAuth.instance;
+
+  void signoutme() async {
+    await _auth.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -79,15 +88,26 @@ class _PageDrawerState extends State<PageDrawer> {
         CustomDrawerItem(
           icon: Icons.settings,
           itemName: "Settings",
-          ontapp: () {},
+          ontapp: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context){
+                return const PageProfile();
+              })
+            );
+          },
         ),
         CustomDrawerItem(
           icon: Icons.power_settings_new,
           itemName: "Logout",
           ontapp: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+            setState(() {
+              // signoutme();
+            });
+            signoutme();
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
               return const PageLogin();
-            }));
+            })
+            );
           },
         ),
       ],

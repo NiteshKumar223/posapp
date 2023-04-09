@@ -5,12 +5,14 @@ class CustomElevatedBtn extends StatelessWidget {
   final VoidCallback onPress;
   final double btnWidth;
   final double? elevation;
+  final bool? loading;
   const CustomElevatedBtn({
     super.key,
     required this.btnName,
     required this.onPress,
     required this.btnWidth, 
-    this.elevation
+    this.elevation, 
+    this.loading
   });
 
   @override

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pos_app/pages/page_due_order_data.dart';
+import 'package:pos_app/custom_ui/custom_elev_btn.dart';
+import 'package:pos_app/utils/due_data_item.dart';
 import 'package:pos_app/utils/colors.dart';
 import '../custom_ui/custom_shimmer.dart';
 import '../models/model_due_order.dart';
@@ -31,7 +32,7 @@ class PageDueOrderState extends State<PageDueOrder> {
         isLoadingData = true;
       });
     });
-    _pageNumber = 0;
+    _pageNumber = 1;
     _posts = [];
     _isLastPage = false;
     _loading = true;
@@ -75,23 +76,23 @@ class PageDueOrderState extends State<PageDueOrder> {
             style: TextStyle(
                 fontSize: size,
                 fontWeight: FontWeight.w500,
-                color: Colors.black),
+                color: Colors.black,
+              ),
           ),
           const SizedBox(
             height: 10,
           ),
-          ElevatedButton(
-              onPressed: () {
+          CustomElevatedBtn(
+              onPress: () {
                 setState(() {
                   _loading = true;
                   _error = false;
                   fetchData();
                 });
               },
-              child: const Text(
-                "Retry",
-                style: TextStyle(fontSize: 20, color: Colors.purpleAccent),
-              )),
+              btnName: "Retry",
+              btnWidth: 100.0,
+            ),
         ],
       ),
     );
@@ -109,7 +110,7 @@ class PageDueOrderState extends State<PageDueOrder> {
             child: Padding(
           padding: EdgeInsets.all(8),
           child: CircularProgressIndicator(
-            color: Colors.red,
+            color: AppColor.colorPrimary,
           ),
         ));
       } else if (_error) {
@@ -146,7 +147,8 @@ class PageDueOrderState extends State<PageDueOrder> {
                     post.title,
                     post.url,
                     post.thumbnailUrl,
-                  ))
+                  )
+                )
               : buildholdshimmer();
         });
   }

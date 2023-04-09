@@ -8,6 +8,7 @@ import 'package:pos_app/utils/colors.dart';
 
 import '../custom_ui/custom_scan_dialog.dart';
 
+
 class PageMyHome extends StatefulWidget {
   const PageMyHome({super.key});
 
@@ -134,7 +135,7 @@ class _PageMyHomeState extends State<PageMyHome>
             // // )]
             // ),
 
-            AppBar(
+          AppBar(
           elevation: 0.0,
           backgroundColor: AppColor.colorPrimary,
           title: const Text("Saaqee-POS"),
@@ -157,7 +158,8 @@ class _PageMyHomeState extends State<PageMyHome>
                         content: CustomDialog(),
                       )),
               icon: const Icon(Icons.qr_code_scanner),
-            )
+            ),
+            
           ],
         ),
         drawer: const PageDrawer(),
