@@ -24,7 +24,7 @@ class _PageLoginWithPhoneState extends State<PageLoginWithPhone> {
         centerTitle: true,
         title: const Text("Login With Phone"),
       ),
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         // color: AppColor.colorPrimaryLight,
@@ -93,11 +93,9 @@ class _PageLoginWithPhoneState extends State<PageLoginWithPhone> {
                       const Center(child: CircularProgressIndicator());
                       setState(() {
                         loading = true;
-                        // Center(child: CircularProgressIndicator());
                       });
                       const Center(child: CircularProgressIndicator());
-                      // Navigator.of(context).push(MaterialPageRoute(
-                      //     builder: (context) => const PageMyHome()));
+                      
             
                       auth.verifyPhoneNumber(
                           phoneNumber: "+91${phoneNumberController.text}",
@@ -123,7 +121,6 @@ class _PageLoginWithPhoneState extends State<PageLoginWithPhone> {
                                     )));
                           },
                           codeAutoRetrievalTimeout: (e) {
-                            // debugPrint(e.toString());
                             SnackBar(content: Text(e.toString()));
                             setState(() {
                               loading = false;

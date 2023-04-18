@@ -1,12 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pos_app/custom_ui/custom_scan_dialog.dart';
+import 'package:pos_app/pages/page_drawer_products.dart';
 import 'package:pos_app/pages/page_login.dart';
 import 'package:pos_app/pages/page_my_home.dart';
 import 'package:pos_app/pages/page_profile.dart';
+import 'package:pos_app/pages/page_sales_record.dart';
+import 'package:pos_app/pages/page_stocks.dart';
+import 'package:pos_app/pages/page_transaction.dart';
 import 'package:pos_app/utils/colors.dart';
 import 'package:flutter_boxicons/flutter_boxicons.dart';
 import '../custom_ui/custom_drawer_item.dart';
+import 'page_drawer_onhold.dart';
 
 class PageDrawer extends StatefulWidget {
   const PageDrawer({super.key});
@@ -17,7 +21,7 @@ class PageDrawer extends StatefulWidget {
 
 class _PageDrawerState extends State<PageDrawer> {
 
-  FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   void signoutme() async {
     await _auth.signOut();
@@ -57,33 +61,47 @@ class _PageDrawerState extends State<PageDrawer> {
         CustomDrawerItem(
           icon: Boxicons.bxs_box,
           itemName: "Product",
-          ontapp: () {},
-        ),
-        CustomDrawerItem(
-          icon: Icons.qr_code_scanner,
-          itemName: "Scan Code",
-          ontapp: () => showDialog(
-            context: context,
-            builder: (context) => const AlertDialog(
-              contentPadding: EdgeInsets.zero,
-              content: CustomDialog(),
-            ),
-          ),
+          ontapp: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              return const PageDrawerProduct();
+            }));
+          },
         ),
         CustomDrawerItem(
           icon: Icons.pause_circle_outline,
           itemName: "On-Hold Bills",
-          ontapp: () {},
+          ontapp: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              return const PageDrawerOnHold();
+            }));
+          },
         ),
         CustomDrawerItem(
           icon: Icons.file_copy,
           itemName: "Sales Record",
-          ontapp: () {},
+          ontapp: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              return const PageSalesRecord();
+            }));
+          },
+        ),
+        CustomDrawerItem(
+          icon: Boxicons.bx_grid,
+          itemName: "Stocks",
+          ontapp: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              return const PageStocks();
+            }));
+          },
         ),
         CustomDrawerItem(
           icon: Icons.attach_money_outlined,
           itemName: "Transactios",
-          ontapp: () {},
+          ontapp: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              return const PageTransaction();
+            }));
+          },
         ),
         CustomDrawerItem(
           icon: Icons.settings,

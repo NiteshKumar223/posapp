@@ -93,7 +93,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                       defaultPinTheme: PinTheme(
                         height: 50,
                         width: 40,
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20.0,
                           color: AppColor.colorPrimary,

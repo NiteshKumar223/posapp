@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pos_app/pages/page_due_order2.dart';
 import 'package:pos_app/pages/page_drawer.dart';
-import 'package:pos_app/pages/page_hold_bills.dart';
-import 'package:pos_app/pages/page_new_order.dart';
-import 'package:pos_app/pages/page_search_bar.dart';
+import 'package:pos_app/pages/page_due_order.dart';
+import 'package:pos_app/pages/page_new_bill.dart';
 import 'package:pos_app/utils/colors.dart';
 
-import '../custom_ui/custom_scan_dialog.dart';
+import 'page_onhold_bills.dart';
+
 
 
 class PageMyHome extends StatefulWidget {
@@ -63,7 +62,7 @@ class _PageMyHomeState extends State<PageMyHome>
     ),
   ];
   // list of body items
-  List<Widget> bodyItems = const [PageNewOrder(), PageHoldBills(), PageDueOrder()];
+  List<Widget> bodyItems = const [PageNewBill(), PageOnHoldBills(), PageDueOrder()];
 
   int currentIndex = 0;
 
@@ -90,78 +89,13 @@ class _PageMyHomeState extends State<PageMyHome>
   Widget build(BuildContext context) {
     return Scaffold(
         appBar:
-
-            // for scrollable appbar
-
-            //     SliverAppBar.medium(
-            //       expandedHeight: 250.0,
-            //       backgroundColor: AppColor.colorPrimary,
-            //       leading: IconButton(
-            //         icon: Icon(Icons.menu),
-            //         onPressed: () {},
-            //       ),
-            //       title: Padding(
-            //         padding: const EdgeInsets.all(10),
-            //         child: Container(
-            //           height: 50.0,
-            //           decoration: BoxDecoration(
-            //               color: AppColor.colorWhite,
-            //               // border: Border.all(),
-            //               borderRadius: BorderRadius.circular(10.0)),
-            //           child: Row(children: [
-            //             Padding(
-            //               padding: const EdgeInsets.only(left: 20.0),
-            //               child: Text(
-            //                 "Search",
-            //                 style: TextStyle(
-            //                     color: AppColor.colorDarkGray, fontSize: 16.0),
-            //               ),
-            //             ),
-            //             Spacer(),
-            //             Padding(
-            //               padding: const EdgeInsets.only(right: 5.0),
-            //               child: IconButton(
-            //                 onPressed: () {},
-            //                 icon: Icon(
-            //                   Icons.qr_code_scanner,
-            //                   color: AppColor.colorPrimary,
-            //                 ),
-            //               ),
-            //             )
-            //           ]
-            //         )
-            //       )
-            //     )
-            // // )]
-            // ),
-
           AppBar(
           elevation: 0.0,
           backgroundColor: AppColor.colorPrimary,
           title: const Text("Saaqee-POS"),
-          actions: [
-            IconButton(
-              onPressed: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
-                  return const PageSearchBar();
-                }));
-              },
-              icon: const Icon(Icons.search),
-            ),
-            IconButton(
-              onPressed: () => showDialog(
-                  barrierDismissible: false,
-                  context: context,
-                  builder: (BuildContext context) => const AlertDialog(
-                        contentPadding: EdgeInsets.zero,
-                        content: CustomDialog(),
-                      )),
-              icon: const Icon(Icons.qr_code_scanner),
-            ),
-            
-          ],
         ),
+
+
         drawer: const PageDrawer(),
         body: Container(
           margin: EdgeInsets.zero,
@@ -209,7 +143,7 @@ class _PageMyHomeState extends State<PageMyHome>
                                 width: 5,
                                 decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
-                                    color: Color.fromARGB(255, 113, 161, 244)),
+                                    color: Colors.red),
                               ))
                         ],
                       );

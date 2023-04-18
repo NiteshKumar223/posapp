@@ -19,11 +19,8 @@ class _PageLoginState extends State<PageLogin> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage("assets/images/loginbackgrd.jpg"),
-          fit: BoxFit.cover,
-          // scale: 1.0
-        )),
+          color: Color.fromARGB(255, 198, 220, 216)
+        ),
         constraints: BoxConstraints(
           maxHeight: MediaQuery.of(context).size.height,
           maxWidth: MediaQuery.of(context).size.width,
@@ -31,27 +28,19 @@ class _PageLoginState extends State<PageLogin> {
         child: Center(
           child: SingleChildScrollView(
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  "Welcome to POS...",
+                  "Welcome to Saaqee POS...",
                   style: TextStyle(fontSize: 25.0, color: AppColor.colorPrimary),
                 ),
                 const SizedBox(
                   height: 20.0,
                 ),
-                Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(color: AppColor.colorPrimary),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    height: 110.0,
-                    width: 110.0,
-                    child: const Icon(
-                      Icons.login,
-                      size: 100,
-                      color: AppColor.colorPrimary,
-                    )),
+                Image.asset(
+                  'assets/images/loginAcc.png',
+                  height: 200,
+                  width: 200,
+                ),
                 const SizedBox(
                   height: 20.0,
                 ),
@@ -123,11 +112,11 @@ class _PageLoginState extends State<PageLogin> {
 }
 
 class CustomTextField extends StatelessWidget {
-  final Icon icon;
+  final Icon? icon;
   final TextEditingController? controller;
   final bool obscure;
   const CustomTextField(
-      {super.key, required this.icon, required this.obscure, this.controller});
+      {super.key, this.icon, required this.obscure, this.controller});
 
   @override
   Widget build(BuildContext context) {

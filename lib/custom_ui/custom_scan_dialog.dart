@@ -13,11 +13,14 @@ class CustomDialog extends StatefulWidget {
 }
 
 class _CustomDialogState extends State<CustomDialog> {
-  String? scanResult;
+  String? scanResult ;
+  final pIdController = TextEditingController();
+  final pNameController = TextEditingController();
+  final pPriceController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250.0,
+      height: 300.0,
       width: 200.0,
       decoration: BoxDecoration(
           color: AppColor.colorWhite,
@@ -33,7 +36,7 @@ class _CustomDialogState extends State<CustomDialog> {
             ),
             child: Center(
               child: Text(
-                "Add Product",
+                "Add New Product",
                 style: TextStyle(
                     fontSize: 25.0,
                     color: AppColor.colorWhite,
@@ -45,10 +48,27 @@ class _CustomDialogState extends State<CustomDialog> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child:
-                Wrap(crossAxisAlignment: WrapCrossAlignment.center, children: [
-              Text("Product Id : $scanResult"),
-              Text("Product Name: Namkeen $scanResult"),
-              Text("Product Price : Rs.159/- $scanResult"),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center, 
+              children: [
+                CustomTxtField( 
+                  controller: pIdController,
+                  labelText: 'Product Id',
+                  iconbtn: IconButton(
+                    icon: const Icon(Icons.qr_code_scanner,color: AppColor.colorPrimary,),
+                    onPressed: ()  => ScanBarCode(),
+                  ),
+                ),
+                const SizedBox(height: 10.0),
+                CustomTxtField(
+                  controller: pNameController,
+                  labelText: "Product Name",
+                ),
+                const SizedBox(height: 10.0),
+                CustomTxtField(
+                  controller: pPriceController,
+                  labelText: "Product Price",
+                ),
             ]),
           ),
           const Spacer(),
@@ -56,12 +76,6 @@ class _CustomDialogState extends State<CustomDialog> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CustomElevatedBtn(
-                btnName: "Scan", 
-                onPress: () => ScanBarCode(), 
-                btnWidth: 80,
-                elevation: 0.0,
-              ),
               CustomElevatedBtn(
                 btnName: "Add", 
                 onPress: (){}, 
@@ -91,6 +105,36 @@ class _CustomDialogState extends State<CustomDialog> {
       scanResult = "Failed to get platform version";
     }
     if (!mounted) return;
-    setState(() => this.scanResult = scanResult);
+    pIdController.text = scanResult;
+  }
+  
+}
+
+class CustomTxtField extends StatelessWidget {
+  final String labelText;
+  final IconButton? iconbtn;
+  final TextEditingController? controller;
+  
+  const CustomTxtField({super.key, required this.labelText, this.iconbtn, this.controller});
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 45,
+      child: TextField(
+        controller: controller,
+      cursorColor: AppColor.colorPrimary,
+      decoration: InputDecoration(
+        labelText: labelText,
+        labelStyle: const TextStyle(color: AppColor.colorPrimary),
+        suffix: iconbtn,
+        enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: AppColor.colorPrimary),
+            borderRadius: BorderRadius.circular(25)),
+        focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: AppColor.colorPrimary),
+            borderRadius: BorderRadius.circular(25)),
+      ),
+      ),
+    );
   }
 }

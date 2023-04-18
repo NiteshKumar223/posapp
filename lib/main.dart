@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:pos_app/pages/page_login.dart';
-// import 'package:pos_app/pages/page_myhome.dart';
 import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:pos_app/utils/colors.dart';
 

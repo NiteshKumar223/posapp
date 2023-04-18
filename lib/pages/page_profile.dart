@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos_app/custom_ui/custom_elev_btn.dart';
 import 'package:pos_app/utils/colors.dart';
 
 class PageProfile extends StatefulWidget {
@@ -11,82 +12,117 @@ class PageProfile extends StatefulWidget {
 class _PageProfileState extends State<PageProfile> {
   @override
   Widget build(BuildContext context) {
+    TextEditingController saleLimitController = TextEditingController();
+    // saleLimitController = 300000.0 as TextEditingController;
     return Scaffold(
-        body: Column(
-          children: [
-            const SizedBox(
-              height: 24,
-            ),
-            Container(
-              height: 150.0,
-              width: double.infinity,
-              padding: const EdgeInsets.all(15),
-              color: AppColor.colorPrimaryDark,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Settings",
-                    style: TextStyle(
-                        fontSize: 22.0,
-                        color: AppColor.colorWhite,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 20,),
-                  ListTile(
-                    leading: CircleAvatar(
-                        radius: 40,
-                        backgroundColor: AppColor.colorPrimaryLight,
-                        child: Icon(
-                          Icons.person,
-                          color: AppColor.colorWhite,
-                          size: 50,
-                        )),
-                    title: Text(
-                      "Hello",
-                      style:
-                          TextStyle(fontSize: 15, color: AppColor.colorLightGray),
+        appBar: AppBar(
+          backgroundColor: AppColor.colorPrimary,
+          title: Text(
+            "Settings",
+            style: TextStyle(
+                fontSize: 22.0,
+                color: AppColor.colorWhite,
+                fontWeight: FontWeight.bold),
+          ),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  // color: AppColor.colorBlack,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                    const Text(
+                      "User Details",
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        color: AppColor.colorPrimary,
+                      ),
                     ),
-                    subtitle: Text(
-                      "John Peter",
-                      style: TextStyle(fontSize: 18, color: AppColor.colorWhite),
+                    const Card(
+                      child: ListTile(
+                          title: Text("Employee ID"), subtitle: Text("EMP101")),
                     ),
-                    trailing: IconButton(
-                      icon: CircleAvatar(
-                          radius: 30,
-                          backgroundColor: AppColor.colorPrimaryLight,
-                          child: Icon(
-                            Icons.edit,
-                            color: AppColor.colorIcons,
-                          )),
-                      onPressed: () {},
+                    const Card(
+                      child: ListTile(
+                          title: Text("Employee Name"),
+                          subtitle: Text("Rohit Negi")),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height-175,
-              width: MediaQuery.of(context).size.width,
-              // color: AppColor.colorBlack,
-              child: SingleChildScrollView(
-                child: Column(children: const[
-                  Card(
-                    child: ListTile(title: Text("My Home")),
-                  ),
-                  Card(
-                    child: ListTile(title: Text("Support")),
-                  ),
-                  Card(
-                    child: ListTile(title: Text("Privecy & Policy")),
-                  ),
-                  Card(
-                    child: ListTile(title: Text("Logout")),
-                  ),
-                ]),
-              ),
-            )
-          ],
+                    const Card(
+                      child: ListTile(
+                          title: Text("Employee Mobile No."),
+                          subtitle: Text("+91 1234567890")),
+                    ),
+                    const Card(
+                      child: ListTile(
+                          title: Text("Employee Email"),
+                          subtitle: Text("rohitnegi@gmail.com")),
+                    ),
+                    SizedBox(
+                      height: 180.0,
+                      width: MediaQuery.of(context).size.width,
+                      child: Column(
+                        children: [
+                          const Text(
+                            "Maximum Sale limit for online transactions (Monthly)",
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                              color: AppColor.colorPrimary,
+                            ),
+                          ),
+                          Card(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Container(
+                                  height: 65.0,
+                                  width: 240.0,
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: TextField(
+                                    controller: saleLimitController,
+                                    keyboardType: TextInputType.phone,
+                                    decoration: InputDecoration(
+                                      hintText: "000000",
+                                      contentPadding: const EdgeInsets.only(
+                                          top: 10, left: 10),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                              color: AppColor.colorPrimary),
+                                          borderRadius:
+                                              BorderRadius.circular(25)),
+                                      focusedBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                              color: AppColor.colorPrimary),
+                                          borderRadius:
+                                              BorderRadius.circular(25)),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 45,
+                                  child: CustomElevatedBtn(
+                                      btnName: "Apply",
+                                      onPress: () {},
+                                      btnWidth: 100),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ]),
+                ),
+              )
+            ],
+          ),
         ));
   }
 }

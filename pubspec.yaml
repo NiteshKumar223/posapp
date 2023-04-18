@@ -50,6 +50,9 @@ dependencies:
   cloud_firestore: ^4.5.0
   pinput: ^2.2.16
   firebase_app_check: ^0.1.2
+  sqflite: ^2.2.6
+  path_provider: ^2.0.14
+  flutter_icons_null_safety: ^1.1.0
 
 dev_dependencies:
   flutter_test:
