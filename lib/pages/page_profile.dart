@@ -37,12 +37,12 @@ class _PageProfileState extends State<PageProfile> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                    const Text(
+                    Text(
                       "User Details",
                       style: TextStyle(
-                        fontSize: 18.0,
+                        fontSize: 22.0,
                         fontWeight: FontWeight.bold,
-                        color: AppColor.colorPrimary,
+                        color: AppColor.colorBlack,
                       ),
                     ),
                     const Card(
@@ -69,12 +69,12 @@ class _PageProfileState extends State<PageProfile> {
                       width: MediaQuery.of(context).size.width,
                       child: Column(
                         children: [
-                          const Text(
+                          Text(
                             "Maximum Sale limit for online transactions (Monthly)",
                             style: TextStyle(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
-                              color: AppColor.colorPrimary,
+                              fontSize: 22.0,
+                        fontWeight: FontWeight.bold,
+                        color: AppColor.colorBlack,
                             ),
                           ),
                           Card(

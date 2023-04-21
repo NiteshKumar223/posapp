@@ -1,11 +1,8 @@
 
 import 'package:flutter/material.dart';
-class AppColor {
-  static const colorPrimary = Color.fromARGB(255, 2, 119, 117);
-  static final colorPrimaryMid = Color.fromARGB(255, 2, 92, 97);
-  static final colorPrimaryDark =Color.fromARGB(255, 2, 86, 86);
-  static final colorPrimaryLight =Color.fromARGB(255, 4, 174, 183);
-  static final colorIcons =Color(0xffFFFFFF);
+class AppColor {  
+  static const colorPrimary = Color(0xff18A56C);
+  static final colorPrimaryDark = Color(0xff108858);
   static final colorDivider =Color(0xffBDBDBD);
   static final colorTransparent =Color(0xff000000);
   static final colorWhite =Color(0xffFFFFFF);

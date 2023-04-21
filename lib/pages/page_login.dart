@@ -18,8 +18,8 @@ class _PageLoginState extends State<PageLogin> {
     return Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
-        decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 198, 220, 216)
+        decoration: BoxDecoration(
+          color: AppColor.colorWhite
         ),
         constraints: BoxConstraints(
           maxHeight: MediaQuery.of(context).size.height,
@@ -37,7 +37,7 @@ class _PageLoginState extends State<PageLogin> {
                   height: 20.0,
                 ),
                 Image.asset(
-                  'assets/images/loginAcc.png',
+                  'assets/images/greenlogin.png',
                   height: 200,
                   width: 200,
                 ),

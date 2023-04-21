@@ -46,7 +46,7 @@ class _PageLoginWithPhoneState extends State<PageLoginWithPhone> {
                   const SizedBox(
                     height: 220.0,
                     width: 220.0,
-                    child: Image(image: AssetImage("assets/images/mobnum.png")),
+                    child: Image(image: AssetImage("assets/images/moblogin.png")),
                   ),
                   const SizedBox(height: 30,),
                   const Text("One Time Password will sent on provided mobile number",textAlign: TextAlign.center,),

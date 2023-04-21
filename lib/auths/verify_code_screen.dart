@@ -60,7 +60,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                   const SizedBox(
                     height: 220.0,
                     width: 220.0,
-                    child: Image(image: AssetImage("assets/images/entotp.png")),
+                    child: Image(image: AssetImage("assets/images/entrotp.png")),
                   ),
                   const SizedBox(height: 30,),
                   const Text("Enter OTP Recieved through SMS",textAlign: TextAlign.center,),
@@ -109,28 +109,6 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                     ),
                   ),
                   
-                  // SizedBox(
-                  //   height: 50,
-                  //   width: 130,
-                  //   child: TextFormField(
-                  //     controller: verifyCodeController,
-                  //     keyboardType: TextInputType.phone,
-                  //     cursorColor: AppColor.colorPrimary,
-                      
-                  //     decoration: InputDecoration(
-                  //       prefixIcon: const Icon(Icons.password,color: AppColor.colorPrimary,),
-                  //       hintText: "Enter OTP",
-                  //       enabledBorder: OutlineInputBorder(
-                  //           borderSide:
-                  //               const BorderSide(color: AppColor.colorPrimary),
-                  //           borderRadius: BorderRadius.circular(25)),
-                  //       focusedBorder: OutlineInputBorder(
-                  //           borderSide:
-                  //               const BorderSide(color: AppColor.colorPrimary),
-                  //           borderRadius: BorderRadius.circular(25)),
-                  //     ),
-                  //   ),
-                  // ),
 
                   const SizedBox(
                     height: 20.0,

@@ -37,7 +37,7 @@ class _DueDataItemState extends State<DueDataItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(255, 166, 198, 194),
+      color: AppColor.colorWhite,
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
       child: Row(
         children: [

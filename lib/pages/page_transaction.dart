@@ -34,8 +34,11 @@ class _PageTransactionState extends State<PageTransaction> {
         
             Container(
               height: 40.0,
+              margin: const EdgeInsets.all(5.0),
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(color: AppColor.colorPrimaryDark),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: AppColor.colorPrimaryDark),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
@@ -69,7 +72,10 @@ class _PageTransactionState extends State<PageTransaction> {
             Container(
               height: 40.0,
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(color: AppColor.colorPrimaryDark),
+              margin: const EdgeInsets.all(5.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: AppColor.colorPrimaryDark),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(

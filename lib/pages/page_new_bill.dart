@@ -61,47 +61,51 @@ class _PageNewBillState extends State<PageNewBill> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: OutlinedButton(
-                  onPressed: () => ScanBarCode(),
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25.0),
-                        side:
-                            const BorderSide(color: AppColor.colorPrimary))),
-                    fixedSize: MaterialStateProperty.all(const Size(170, 40)),
-                    side: MaterialStateProperty.all(
-                        const BorderSide(color: AppColor.colorPrimary)),
-                  ),
-                  child: const Text(
-
-                    'Add Product',
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      color: AppColor.colorPrimary,
+              padding: const EdgeInsets.all(4.0),
+              child: 
+              SizedBox(
+                height: 40,
+                child: CustomElevatedBtn(
+                        elevation: 0.0,
+                        btnName: "Add Product",
+                        onPress: () => ScanBarCode(),
+                        btnWidth: 150.0
                     ),
-                  )),
+              )
+              // OutlinedButton(
+              //     onPressed: () => ScanBarCode(),
+              //     style: ButtonStyle(
+              //       shape: MaterialStateProperty.all(RoundedRectangleBorder(
+              //           borderRadius: BorderRadius.circular(25.0),
+              //           side:
+              //               const BorderSide(color: AppColor.colorPrimary))),
+              //       fixedSize: MaterialStateProperty.all(const Size(170, 40)),
+              //       side: MaterialStateProperty.all(
+              //           const BorderSide(color: AppColor.colorPrimary)),
+              //     ),
+              //     child: const Text(
+
+              //       'Add Product',
+              //       style: TextStyle(
+              //         fontSize: 18.0,
+              //         color: AppColor.colorPrimary,
+              //       ),
+              //     )),
             ),
             Padding(  
               padding: const EdgeInsets.all(5.0),
-              child: OutlinedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25.0),
-                        side:
-                            const BorderSide(color: AppColor.colorPrimary))),
-                    fixedSize: MaterialStateProperty.all(const Size(170, 40)),
-                    side: MaterialStateProperty.all(
-                        const BorderSide(color: AppColor.colorPrimary)),
-                  ),
-                  child: const Text(
-                    'Hold Bill',
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      color: AppColor.colorPrimary,
+              child: 
+              SizedBox(
+                height: 40,
+                child: CustomElevatedBtn(
+                        elevation: 0.0,
+                        btnName: "Hold Bill",
+                        onPress: () {
+                          
+                        },
+                        btnWidth: 140.0
                     ),
-                  )),
+              )
             )
           ],
         ),
@@ -159,7 +163,8 @@ class _PageNewBillState extends State<PageNewBill> {
                       onPress: () {
                         openDialog();
                       },
-                      btnWidth: 150.0)
+                      btnWidth: 150.0
+                  )
                 ]),
             const SizedBox(height: 5.0),
           ],

@@ -242,7 +242,7 @@ class PageDrawerProductState extends State<PageDrawerProduct> {
   Widget buildholdshimmer() {
     return Container(
       height: 100,
-      color: const Color.fromARGB(255, 166, 198, 194),
+      color: AppColor.colorWhite,
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
       margin: const EdgeInsets.all(10.0),
       child: Row(

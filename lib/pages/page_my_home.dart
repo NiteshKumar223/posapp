@@ -130,7 +130,7 @@ class _PageMyHomeState extends State<PageMyHome>
                                       ? AppColor.colorPrimaryDark
                                       : AppColor.colorPrimaryDark,
                                   border: currentIndex == index
-                                      ? Border.all(color: AppColor.colorPrimary)
+                                      ? Border.all(color: AppColor.colorPrimaryDark)
                                       : Border.all(
                                           color: AppColor.colorPrimaryDark)),
                               child: tabItems[index],
@@ -141,9 +141,9 @@ class _PageMyHomeState extends State<PageMyHome>
                               child: Container(
                                 height: 5,
                                 width: 5,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                     shape: BoxShape.circle,
-                                    color: Colors.red),
+                                    color: AppColor.colorWhite),
                               ))
                         ],
                       );

@@ -20,9 +20,10 @@ class CustomDrawerItem extends StatelessWidget {
             Icon(icon,size: 40.0,color: AppColor.colorPrimary,),
             Text(
               itemName,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 12.0,
-                color: AppColor.colorPrimary,
+                color: AppColor.colorBlack,
+                fontWeight: FontWeight.bold
               ),
             ),
           ],
